@@ -1,6 +1,6 @@
 :root {
-  --bg: #fff8ed;
-  --bg-2: #ffead8;
+  --bg: #fff1d6;
+  --bg-2: #ffe1c4;
   --surface: rgba(255, 255, 255, 0.78);
   --surface-strong: rgba(255, 255, 255, 0.94);
   --card: rgba(255, 255, 255, 0.88);
@@ -26,13 +26,9 @@ html {
 body {
   font-family: "Inter", "Segoe UI", sans-serif;
   background:
-    radial-gradient(
-      circle at top left,
-      rgba(255, 112, 72, 0.22),
-      transparent 38%
-    ),
-    radial-gradient(circle at right, rgba(255, 198, 55, 0.28), transparent 38%),
-    var(--bg);
+    radial-gradient(ellipse at 8% 8%, rgba(255, 115, 75, 0.23), transparent 36%),
+    radial-gradient(ellipse at 92% 28%, rgba(255, 195, 55, 0.32), transparent 38%),
+    linear-gradient(135deg, #fff1d6 0%, #fff9ed 52%, #eff9df 100%);
   color: var(--text);
   line-height: 1.7;
 }
@@ -406,7 +402,7 @@ p {
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.94),
-    rgba(238, 243, 255, 0.98)
+    rgba(255, 245, 225, 0.98)
   );
   border: 1px solid rgba(148, 163, 184, 0.14);
 }
@@ -491,13 +487,13 @@ p {
 }
 
 .project-01 {
-  background: linear-gradient(135deg, #0f172a, #1d4ed8);
+  background: linear-gradient(135deg, #ff704d, #ffad33);
 }
 .project-02 {
-  background: linear-gradient(135deg, #111827, #a855f7);
+  background: linear-gradient(135deg, #f45c87, #ff9865);
 }
 .project-03 {
-  background: linear-gradient(135deg, #022c22, #0f766e);
+  background: linear-gradient(135deg, #a6c92d, #31a987);
 }
 
 .project-info {
