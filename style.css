@@ -17,7 +17,6 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
 }
 
 html {
@@ -27,7 +26,11 @@ html {
 body {
   font-family: "Inter", "Segoe UI", sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(103, 249, 176, 0.18), transparent 25%),
+    radial-gradient(
+      circle at top left,
+      rgba(103, 249, 176, 0.18),
+      transparent 25%
+    ),
     radial-gradient(circle at right, rgba(113, 246, 92, 0.2), transparent 25%),
     var(--bg);
   color: var(--text);
@@ -49,10 +52,6 @@ img {
   margin: 0 auto;
 }
 
-.section {
-  padding: 7rem 0;
-}
-
 .section-header {
   margin-bottom: 2.75rem;
   text-align: center;
@@ -68,7 +67,10 @@ img {
   color: var(--primary);
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   line-height: 1.1;
   letter-spacing: -0.04em;
 }
@@ -147,7 +149,10 @@ p {
   border-radius: 999px;
   border: 1px solid transparent;
   font-weight: 700;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .btn:hover,
@@ -156,7 +161,12 @@ p {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary), #7dd3fc 45%, #a78bfa 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    #7dd3fc 45%,
+    #a78bfa 100%
+  );
   color: #03131f;
   box-shadow: 0 15px 30px rgba(103, 232, 249, 0.22);
 }
@@ -250,7 +260,8 @@ p {
   min-height: 520px;
   background:
     linear-gradient(180deg, rgba(15, 23, 42, 0.25), rgba(15, 23, 42, 0.72)),
-    url("https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1000&q=80") center/cover no-repeat;
+    url("https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1000&q=80")
+      center/cover no-repeat;
 }
 
 .profile-badge,
@@ -374,7 +385,11 @@ p {
   border-radius: 12px;
   display: grid;
   place-items: center;
-  background: linear-gradient(135deg, rgba(103, 232, 249, 0.16), rgba(139, 92, 246, 0.18));
+  background: linear-gradient(
+    135deg,
+    rgba(103, 232, 249, 0.16),
+    rgba(139, 92, 246, 0.18)
+  );
   color: var(--primary);
   font-size: 1.1rem;
 }
@@ -387,8 +402,12 @@ p {
 .stat-box {
   padding: 1.2rem 1.2rem 1rem;
   border-radius: 20px;
-  background: linear-gradient(180deg, rgba(15,23,42,0.75), rgba(15,23,42,0.95));
-  border: 1px solid rgba(148,163,184,0.14);
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.75),
+    rgba(15, 23, 42, 0.95)
+  );
+  border: 1px solid rgba(148, 163, 184, 0.14);
 }
 
 .stat-box strong {
@@ -414,7 +433,11 @@ p {
   place-items: center;
   margin-bottom: 1rem;
   border-radius: 14px;
-  background: linear-gradient(135deg, rgba(103, 232, 249, 0.16), rgba(139, 92, 246, 0.18));
+  background: linear-gradient(
+    135deg,
+    rgba(103, 232, 249, 0.16),
+    rgba(139, 92, 246, 0.18)
+  );
   color: var(--primary);
   font-weight: 700;
 }
@@ -459,12 +482,22 @@ p {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(103, 232, 249, 0.15), rgba(139, 92, 246, 0.25));
+  background: linear-gradient(
+    135deg,
+    rgba(103, 232, 249, 0.15),
+    rgba(139, 92, 246, 0.25)
+  );
 }
 
-.project-01 { background: linear-gradient(135deg, #0f172a, #1d4ed8); }
-.project-02 { background: linear-gradient(135deg, #111827, #a855f7); }
-.project-03 { background: linear-gradient(135deg, #022c22, #0f766e); }
+.project-01 {
+  background: linear-gradient(135deg, #0f172a, #1d4ed8);
+}
+.project-02 {
+  background: linear-gradient(135deg, #111827, #a855f7);
+}
+.project-03 {
+  background: linear-gradient(135deg, #022c22, #0f766e);
+}
 
 .project-info {
   padding: 1.5rem;
@@ -560,7 +593,11 @@ p {
   border-radius: 14px;
   display: grid;
   place-items: center;
-  background: linear-gradient(135deg, rgba(103, 232, 249, 0.16), rgba(139, 92, 246, 0.15));
+  background: linear-gradient(
+    135deg,
+    rgba(103, 232, 249, 0.16),
+    rgba(139, 92, 246, 0.15)
+  );
   color: var(--primary);
 }
 
@@ -574,7 +611,9 @@ p {
 .reveal {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
 }
 
 .reveal.visible {
@@ -583,8 +622,13 @@ p {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @media (max-width: 900px) {
