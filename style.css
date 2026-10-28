@@ -27,8 +27,8 @@ html {
 body {
   font-family: "Inter", "Segoe UI", sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(103, 232, 249, 0.18), transparent 25%),
-    radial-gradient(circle at right, rgba(139, 92, 246, 0.2), transparent 25%),
+    radial-gradient(circle at top left, rgba(103, 249, 176, 0.18), transparent 25%),
+    radial-gradient(circle at right, rgba(113, 246, 92, 0.2), transparent 25%),
     var(--bg);
   color: var(--text);
   line-height: 1.7;
