@@ -1,15 +1,24 @@
 :root {
+  /* Page background: the two base colors used by the canvas gradient. */
   --bg: #fff1d6;
   --bg-2: #ffe1c4;
+  /* Soft color glows layered over the page background. */
+  --bg-glow-primary: rgba(255, 115, 75, 0.23);
+  --bg-glow-secondary: rgba(255, 195, 55, 0.32);
+  --bg-glow-tertiary: #eff9df;
+  /* Surfaces: navigation, panels, and cards. */
   --surface: rgba(255, 255, 255, 0.78);
   --surface-strong: rgba(255, 255, 255, 0.94);
   --card: rgba(255, 255, 255, 0.88);
   --stroke: rgba(124, 68, 50, 0.2);
+  /* Text colors. */
   --text: #30221d;
   --muted: #705b52;
+  /* Brand colors: links, labels, buttons, and decorative accents. */
   --primary: #f04f35;
   --primary-2: #ffb627;
   --accent: #a8c900;
+  /* Status and depth. */
   --success: #438a38;
   --shadow: 0 22px 55px rgba(119, 65, 42, 0.14);
 }
@@ -26,9 +35,9 @@ html {
 body {
   font-family: "Inter", "Segoe UI", sans-serif;
   background:
-    radial-gradient(ellipse at 8% 8%, rgba(255, 115, 75, 0.23), transparent 36%),
-    radial-gradient(ellipse at 92% 28%, rgba(255, 195, 55, 0.32), transparent 38%),
-    linear-gradient(135deg, #fff1d6 0%, #fff9ed 52%, #eff9df 100%);
+    radial-gradient(ellipse at 8% 8%, var(--bg-glow-primary), transparent 36%),
+    radial-gradient(ellipse at 92% 28%, var(--bg-glow-secondary), transparent 38%),
+    linear-gradient(135deg, var(--bg) 0%, #fff9ed 52%, var(--bg-glow-tertiary) 100%);
   color: var(--text);
   line-height: 1.7;
 }
