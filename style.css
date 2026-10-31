@@ -1,28 +1,29 @@
 :root {
-  /* Page background: the two base colors used by the canvas gradient. */
-  --bg: #fff1d6;
-  --bg-2: #ffe1c4;
-  /* Soft color glows layered over the page background. */
-  --bg-glow-primary: rgba(255, 115, 75, 0.23);
-  --bg-glow-secondary: rgba(255, 195, 55, 0.32);
-  --bg-glow-tertiary: #eff9df;
-  /* Surfaces: navigation, panels, and cards. */
-  --surface: rgba(255, 255, 255, 0.78);
-  --surface-strong: rgba(255, 255, 255, 0.94);
-  --card: rgba(255, 255, 255, 0.88);
-  --stroke: rgba(124, 68, 50, 0.2);
-  /* Text colors. */
-  --text: #30221d;
-  --muted: #705b52;
-  /* Brand colors: links, labels, buttons, and decorative accents. */
-  --primary: #f04f35;
-  --primary-2: #ffb627;
-  --accent: #a8c900;
-  /* Status and depth. */
-  --success: #438a38;
-  --shadow: 0 22px 55px rgba(119, 65, 42, 0.14);
+  /* Variabel warna dasar yang dipakai bersama oleh seluruh halaman. */
+  --bg: #080b16;
+  --bg-2: #101629;
+  /* Warna cahaya lembut yang dilapiskan pada latar belakang. */
+  --bg-glow-primary: rgba(56, 189, 248, 0.18);
+  --bg-glow-secondary: rgba(168, 85, 247, 0.2);
+  --bg-glow-tertiary: #111a2b;
+  /* Warna permukaan untuk navigasi, panel, dan kartu. */
+  --surface: rgba(20, 28, 46, 0.82);
+  --surface-strong: rgba(24, 34, 54, 0.96);
+  --card: rgba(16, 23, 39, 0.9);
+  --stroke: rgba(148, 163, 184, 0.24);
+  /* Warna teks utama dan teks pendukung. */
+  --text: #edf6ff;
+  --muted: #b7c5d8;
+  /* Warna identitas untuk tautan, label, tombol, dan hiasan. */
+  --primary: #67e8f9;
+  --primary-2: #a78bfa;
+  --accent: #f0abfc;
+  /* Warna status dan bayangan untuk memberi kesan kedalaman. */
+  --success: #86efac;
+  --shadow: 0 22px 55px rgba(0, 0, 0, 0.35);
 }
 
+/* Aturan dasar agar ukuran elemen konsisten dan margin bawaan dihapus. */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -32,8 +33,9 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Gaya dasar teks, warna, dan latar yang digunakan semua halaman. */
 body {
-  /* Warna dasar halaman dan gradient latar belakang bersama untuk semua HTML. */
+  /* Latar gelap dengan cahaya biru-ungu sebagai aksen pada semua halaman. */
   font-family: "Inter", "Segoe UI", sans-serif;
   background:
     radial-gradient(ellipse at 8% 8%, var(--bg-glow-primary), transparent 36%),
@@ -45,11 +47,12 @@ body {
     linear-gradient(
       135deg,
       var(--bg) 0%,
-      #fff9ed 52%,
+      #0c1222 52%,
       var(--bg-glow-tertiary) 100%
     );
   color: var(--text);
   line-height: 1.7;
+  text-shadow: 0 0 10px rgba(103, 232, 249, 0.2);
 }
 
 a {
@@ -57,6 +60,7 @@ a {
   text-decoration: none;
 }
 
+/* Gambar tidak melewati lebar wadahnya dan tampil sebagai blok. */
 img {
   max-width: 100%;
   display: block;
@@ -67,6 +71,7 @@ img {
   margin: 0 auto;
 }
 
+/* Gaya umum judul bagian dan label kecil di atas judul. */
 .section-header {
   margin-bottom: 2.75rem;
   text-align: center;
@@ -102,6 +107,7 @@ p {
   color: var(--muted);
 }
 
+/* Header navigasi dibuat melekat di atas saat halaman digulir. */
 .site-header {
   /* Warna navigasi dan garis pemisah header. */
   position: sticky;
@@ -109,7 +115,9 @@ p {
   z-index: 20;
   backdrop-filter: blur(16px);
   background: rgba(255, 255, 255, 0.82);
-  border-bottom: 1px solid var(--stroke);
+  border-bottom: 1px solid rgba(124, 68, 50, 0.2);
+  color: #30221d;
+  text-shadow: none;
 }
 
 .nav {
@@ -122,21 +130,23 @@ p {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1rem;
   font-weight: 800;
   letter-spacing: 0.04em;
+  font-family: "Audiowide", sans-serif;
 }
 
 .brand-mark {
   /* Warna logo memakai warna teks dan warna brand pada gradient. */
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2.8rem;
+  height: 2.5rem;
   display: grid;
   place-items: center;
   border-radius: 12px;
-  background: linear-gradient(135deg, var(--primary), var(--primary-2));
-  color: var(--text);
-  box-shadow: 0 12px 24px rgba(240, 79, 53, 0.3);
+  background: linear-gradient(135deg, #e6b1a9, #f5d188);
+  color: #010000;
+  box-shadow: 0 12px 24px rgba(244, 97, 97, 0.3);
+  font-family: "Trirong", serif;
 }
 
 .nav-links {
@@ -144,7 +154,7 @@ p {
   align-items: center;
   gap: 1.6rem;
   font-size: 0.95rem;
-  color: var(--muted);
+  color: #705b52;
 }
 
 .nav-links a {
@@ -153,9 +163,10 @@ p {
 
 .nav-links a:hover,
 .nav-links a:focus-visible {
-  color: var(--text);
+  color: #30221d;
 }
 
+/* Tombol bersama beserta variasi warna primer dan sekunder. */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -185,7 +196,14 @@ p {
     var(--primary-2) 55%,
     var(--accent) 100%
   );
-  color: var(--text);
+  color: #0b1220;
+  box-shadow: 0 15px 30px rgba(240, 79, 53, 0.26);
+}
+
+.site-header .btn-primary {
+  /* Pertahankan warna tombol header seperti sebelum tema gelap diterapkan. */
+  background: linear-gradient(135deg, #f04f35, #ffb627 55%, #a8c900 100%);
+  color: #30221d;
   box-shadow: 0 15px 30px rgba(240, 79, 53, 0.26);
 }
 
@@ -196,6 +214,7 @@ p {
   color: var(--text);
 }
 
+/* Bagian pembuka beranda: teks, tombol, ringkasan, dan foto profil. */
 .hero {
   position: relative;
   padding: 5rem 0 4rem;
@@ -272,17 +291,17 @@ p {
 }
 
 .profile-image img {
-  position: relative;
+  position: absolute;
   z-index: 1;
-  width: 100%;
-  height: 100%;
+  width: 85%;
+  height: 85%;
   object-fit: contain;
   object-position: center bottom;
   filter: drop-shadow(0 18px 24px rgba(119, 65, 42, 0.2));
 }
 
 .profile-image-border {
-  position: absolute;
+  position: fixed;
   inset: 0;
   z-index: 0;
 }
@@ -296,7 +315,7 @@ p {
 .glass-card {
   width: min(100%, 420px);
   padding: 1.2rem;
-  background: rgba(255, 255, 255, 0.82);
+  background: var(--surface-strong);
   border: 1px solid var(--stroke);
   border-radius: 28px;
   box-shadow: var(--shadow);
@@ -308,7 +327,7 @@ p {
 .float-card {
   position: absolute;
   z-index: 1;
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--surface-strong);
   color: var(--text);
   border: 1px solid var(--stroke);
   backdrop-filter: blur(12px);
@@ -380,6 +399,7 @@ p {
   color: var(--text);
 }
 
+/* Tata letak kartu informasi pada halaman Tentang. */
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -455,8 +475,8 @@ p {
   border-radius: 20px;
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.94),
-    rgba(255, 245, 225, 0.98)
+    rgba(30, 41, 59, 0.96),
+    rgba(15, 23, 42, 0.98)
   );
   border: 1px solid var(--stroke);
 }
@@ -467,6 +487,7 @@ p {
   font-size: 2rem;
 }
 
+/* Kartu daftar keahlian dan tanda titik pada setiap butir. */
 .skill-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -487,10 +508,21 @@ p {
   background: linear-gradient(
     135deg,
     rgba(240, 79, 53, 0.14),
-    rgba(255, 182, 39, 0.2)
+    rgba(116, 90, 38, 0.2)
   );
-  color: var(--primary);
+  color: #ffffff;
   font-weight: 700;
+}
+
+.skill-icon-svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+}
+
+.skill-icon-svg path {
+  fill: currentColor;
 }
 
 .skill-card ul {
@@ -513,6 +545,7 @@ p {
   color: var(--primary);
 }
 
+/* Kartu proyek, area gambar dekoratif, dan label teknologi. */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -579,6 +612,7 @@ p {
   font-weight: 700;
 }
 
+/* Riwayat pengalaman ditampilkan sebagai kumpulan item linimasa. */
 .timeline {
   display: grid;
   gap: 1.2rem;
@@ -614,11 +648,12 @@ p {
   font-size: 1.35rem;
 }
 
+/* Informasi kontak disusun menjadi dua kolom dan daftar kontak. */
 .contact-wrap {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 1.5rem;
-  align-items: center;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(1rem, 3vw, 2rem);
+  align-items: start;
 }
 
 .contact-card {
@@ -627,8 +662,8 @@ p {
 
 .contact-list {
   display: grid;
-  gap: 1rem;
-  margin-top: 1.5rem;
+  gap: 0.1rem;
+  margin-top: 0.5rem;
 }
 
 .contact-item {
@@ -646,12 +681,20 @@ p {
   place-items: center;
   background: linear-gradient(
     135deg,
-    rgba(240, 79, 53, 0.14),
+    rgba(252, 252, 252, 0.972),
     rgba(255, 182, 39, 0.18)
   );
   color: var(--primary);
 }
 
+.contact-icon-svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+}
+
+/* Footer sederhana dengan garis pembatas dari konten utama. */
 .footer {
   padding: 1.3rem 0 2.5rem;
   text-align: center;
@@ -659,6 +702,7 @@ p {
   border-top: 1px solid var(--stroke);
 }
 
+/* Elemen dengan kelas reveal muncul ketika diamati oleh JavaScript. */
 .reveal {
   opacity: 0;
   transform: translateY(28px);
@@ -672,6 +716,7 @@ p {
   transform: translateY(0);
 }
 
+/* Gerakan naik-turun untuk elemen dekoratif yang mengambang. */
 @keyframes float {
   0%,
   100% {
@@ -682,10 +727,10 @@ p {
   }
 }
 
+/* Pada tablet, ubah grid menjadi satu kolom dan ringkas navigasi. */
 @media (max-width: 900px) {
   .hero-grid,
   .about-grid,
-  .contact-wrap,
   .skill-grid,
   .project-grid {
     grid-template-columns: 1fr;
@@ -704,6 +749,14 @@ p {
   }
 }
 
+/* Kartu kontak baru ditumpuk pada layar kecil agar tetap nyaman dibaca. */
+@media (max-width: 700px) {
+  .contact-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Penyesuaian untuk ponsel: tombol penuh dan jarak konten lebih rapat. */
 @media (max-width: 560px) {
   .hero {
     padding-top: 3.5rem;

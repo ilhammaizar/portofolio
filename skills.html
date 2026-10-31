@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="id">
   <head>
+    <!-- Metadata halaman Keahlian untuk browser dan mesin pencari. -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -15,9 +16,14 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Audiowide"
+    />
     <link rel="stylesheet" href="style.css?v=20261029-2" />
   </head>
   <body>
+    <!-- Navigasi utama digunakan bersama oleh seluruh halaman portofolio. -->
     <header class="site-header">
       <div class="container nav">
         <a
@@ -25,7 +31,7 @@
           class="brand"
           aria-label="Beranda Ilham Aulia Maizar"
         >
-          <span class="brand-mark">I</span>
+          <span class="brand-mark">IAM</span>
           <span>Ilham Aulia Maizar</span>
         </a>
         <nav class="nav-links" aria-label="Navigasi utama">
@@ -39,6 +45,7 @@
       </div>
     </header>
     <main>
+      <!-- Keahlian dikelompokkan menjadi web, dukungan TI, dan soft skill. -->
       <section id="skills" class="section">
         <div class="container">
           <div class="section-header reveal">
@@ -46,9 +53,22 @@
             <h2>Keterampilan teknis dan interpersonal.</h2>
           </div>
 
+          <!-- Setiap kartu mengelompokkan daftar kemampuan yang serupa. -->
           <div class="skill-grid">
             <article class="skill-card reveal">
-              <div class="skill-icon">WEB</div>
+              <div class="skill-icon">
+                <svg
+                  class="skill-icon-svg"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>html</title>
+                  <path
+                    d="M0 13.01v-2l7.09-2.98.58 1.94-5.1 2.05 5.16 2.05-.63 1.9Zm16.37 1.03 5.18-2-5.16-2.09.65-1.88L24 10.95v2.12L17 16zm-2.85-9.98H16l-5.47 15.88H8.05Z"
+                  />
+                </svg>
+              </div>
               <h3>Bahasa Pemrograman &amp; Web</h3>
               <ul>
                 <li>PHP dan JavaScript</li>
@@ -58,7 +78,34 @@
             </article>
 
             <article class="skill-card reveal">
-              <div class="skill-icon">IT</div>
+              <div class="skill-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-hierarchy-3"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M10 5a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                  <path d="M6 12a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                  <path d="M10 19a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                  <path d="M18 19a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                  <path d="M2 19a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                  <path d="M14 12a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                  <path d="M5 17l2 -3" />
+                  <path d="M9 10l2 -3" />
+                  <path d="M13 7l2 3" />
+                  <path d="M17 14l2 3" />
+                  <path d="M15 14l-2 3" />
+                  <path d="M9 14l2 3" />
+                </svg>
+              </div>
               <h3>Networking &amp; IT Support</h3>
               <ul>
                 <li>Konfigurasi jaringan LAN/WLAN dan subnetting</li>
@@ -68,21 +115,43 @@
             </article>
 
             <article class="skill-card reveal">
-              <div class="skill-icon">TS</div>
+              <div class="skill-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-tool"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M7 10h3v-3l-3.5 -3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1 -3 3l-6 -6a6 6 0 0 1 -8 -8l3.5 3.5"
+                  />
+                </svg>
+              </div>
               <h3>Tools &amp; Soft Skills</h3>
               <ul>
                 <li>GitHub, VS Code, MySQL, dan Microsoft Word</li>
                 <li>Pemecahan masalah dan ketelitian transaksi</li>
-                <li>Pelayanan pelanggan, kerja sama tim, dan komunikasi efektif</li>
+                <li>
+                  Pelayanan pelanggan, kerja sama tim, dan komunikasi efektif
+                </li>
               </ul>
             </article>
           </div>
         </div>
       </section>
     </main>
+    <!-- Footer menutup konten dan menampilkan informasi hak cipta. -->
     <footer class="footer">
       <div class="container">&copy; 2026 Ilham Aulia Maizar.</div>
     </footer>
+    <!-- Skrip mengaktifkan animasi kemunculan pada elemen berkelas reveal. -->
     <script src="script.js"></script>
   </body>
 </html>

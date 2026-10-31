@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="id">
   <head>
+    <!-- Metadata halaman membantu browser dan mesin pencari mengenali beranda. -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -15,9 +16,11 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css?v=20261029-2" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Navigasi utama digunakan bersama oleh seluruh halaman portofolio. -->
     <header class="site-header">
       <div class="container nav">
         <a
@@ -25,7 +28,7 @@
           class="brand"
           aria-label="Beranda Ilham Aulia Maizar"
         >
-          <span class="brand-mark">I</span>
+          <span class="brand-mark">IAM</span>
           <span>Ilham Aulia Maizar</span>
         </a>
         <nav class="nav-links" aria-label="Navigasi utama">
@@ -39,8 +42,10 @@
       </div>
     </header>
     <main>
+      <!-- Bagian hero memperkenalkan pemilik portofolio dan fokus keahliannya. -->
       <section id="home" class="hero">
         <div class="container hero-grid">
+          <!-- Teks pengenalan, tautan tindakan, dan ringkasan profil. -->
           <div class="hero-copy reveal">
             <span class="eyebrow"
               >Lulusan Teknik Informatika • Pengembang Web</span
@@ -78,6 +83,7 @@
             </div>
           </div>
 
+          <!-- Foto profil diberi bentuk dekoratif melalui SVG dan CSS. -->
           <div class="hero-visual reveal">
             <div class="profile-image">
               <img
@@ -87,8 +93,8 @@
               <span class="profile-image-border" aria-hidden="true">
                 <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                   <path
-                    fill="var(--primary-2)"
-                    d="M49.9,-29.5C59.7,-11.8,59.2,11,49.2,29.5C39.1,48.1,19.6,62.3,-0.7,62.6C-20.9,63,-41.8,49.6,-52.2,30.9C-62.5,12.2,-62.3,-11.8,-51.8,-29.9C-41.4,-47.9,-20.7,-60,-0.3,-59.8C20,-59.6,40.1,-47.2,49.9,-29.5Z"
+                    fill="#5ccc7f"
+                    d="M65.3,-21.2C74.2,6.1,63.7,39.6,43.6,52.4C23.5,65.2,-6.1,57.1,-30.4,39.9C-54.7,22.7,-73.7,-3.7,-67.8,-26.9C-61.8,-50.2,-30.9,-70.2,-1.3,-69.7C28.2,-69.3,56.4,-48.4,65.3,-21.2Z"
                     transform="translate(100 100)"
                   />
                 </svg>
@@ -98,9 +104,11 @@
         </div>
       </section>
     </main>
+    <!-- Footer menutup konten dan menampilkan informasi hak cipta. -->
     <footer class="footer">
       <div class="container">&copy; 2026 Ilham Aulia Maizar.</div>
     </footer>
+    <!-- Skrip mengaktifkan animasi kemunculan dan penyesuaian tautan email. -->
     <script src="script.js"></script>
   </body>
 </html>
