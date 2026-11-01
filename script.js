@@ -20,6 +20,46 @@ const revealObserver = new IntersectionObserver(
 // Daftarkan setiap elemen yang memakai efek kemunculan.
 revealElements.forEach((element) => revealObserver.observe(element));
 
+const navToggle = document.querySelector('[data-nav-toggle]');
+const navMenu = document.querySelector('#primary-navigation');
+
+if (navToggle && navMenu) {
+  const setNavOpen = (isOpen) => {
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+    navToggle.setAttribute(
+      'aria-label',
+      isOpen ? 'Tutup navigasi' : 'Buka navigasi'
+    );
+    navMenu.classList.toggle('is-open', isOpen);
+  };
+
+  navToggle.addEventListener('click', () => {
+    setNavOpen(navToggle.getAttribute('aria-expanded') !== 'true');
+  });
+
+  navMenu.addEventListener('click', (event) => {
+    if (event.target.closest('a')) {
+      setNavOpen(false);
+    }
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+      setNavOpen(false);
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      setNavOpen(false);
+    }
+  });
+
+  window.matchMedia('(min-width: 901px)').addEventListener('change', () => {
+    setNavOpen(false);
+  });
+}
+
 // Di perangkat seluler, buka aplikasi email melalui tautan mailto.
 const gmailCompose = document.querySelector('[data-gmail-compose]');
 if (gmailCompose && /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {

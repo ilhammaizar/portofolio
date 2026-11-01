@@ -39,14 +39,28 @@
           />
           <span>Ilham Aulia Maizar</span>
         </a>
-        <nav class="nav-links" aria-label="Navigasi utama">
-          <a href="about.html">Tentang</a>
-          <a href="skills.html">Keahlian</a>
-          <a href="projects.html">Proyek</a>
-          <a href="experience.html">Pengalaman</a>
-          <a href="contact.html">Kontak</a>
-        </nav>
-        <a class="btn btn-primary" href="contact.html">Hubungi Saya</a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Buka navigasi"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          data-nav-toggle
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-menu" id="primary-navigation">
+          <nav class="nav-links" aria-label="Navigasi utama">
+            <a href="about.html">Tentang</a>
+            <a href="skills.html">Keahlian</a>
+            <a href="projects.html">Proyek</a>
+            <a href="experience.html">Pengalaman</a>
+            <a href="contact.html">Kontak</a>
+          </nav>
+          <a class="btn btn-primary" href="contact.html">Hubungi Saya</a>
+        </div>
       </div>
     </header>
     <main>

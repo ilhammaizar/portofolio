@@ -127,6 +127,16 @@ p {
   min-height: 80px;
 }
 
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.nav-toggle {
+  display: none;
+}
+
 .brand {
   display: inline-flex;
   align-items: center;
@@ -159,7 +169,11 @@ p {
   color: #30221d;
 }
 
-
+.nav-toggle:focus-visible,
+.nav-menu a:focus-visible {
+  outline: 2px solid var(--primary-2);
+  outline-offset: 4px;
+}
 
 /* Tombol bersama beserta variasi warna primer dan sekunder. */
 .btn {
@@ -652,6 +666,7 @@ p {
 }
 
 .contact-card {
+  min-width: 0;
   padding: 2rem;
 }
 
@@ -668,9 +683,23 @@ p {
   color: var(--text);
 }
 
+.contact-item > div:last-child {
+  min-width: 0;
+}
+
+.contact-item p {
+  overflow-wrap: anywhere;
+}
+
+.contact-email {
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
 .contact-icon {
   width: 2.7rem;
   height: 2.7rem;
+  flex: 0 0 2.7rem;
   border-radius: 14px;
   display: grid;
   place-items: center;
@@ -735,8 +764,109 @@ p {
     order: -1;
   }
 
+  .nav {
+    position: relative;
+    min-height: 72px;
+  }
+
+  .nav-toggle {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(48, 34, 29, 0.18);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.72);
+    color: #30221d;
+    cursor: pointer;
+  }
+
+  .nav-toggle span {
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    transition:
+      transform 0.25s ease,
+      opacity 0.2s ease;
+  }
+
+  .nav-toggle span:first-child {
+    transform: translateY(-6px);
+  }
+
+  .nav-toggle span:last-child {
+    transform: translateY(6px);
+  }
+
+  .nav-toggle[aria-expanded="true"] span:first-child {
+    transform: rotate(45deg);
+  }
+
+  .nav-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle[aria-expanded="true"] span:last-child {
+    transform: rotate(-45deg);
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    left: 0;
+    z-index: 1;
+    display: grid;
+    gap: 0.75rem;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 1rem;
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 18px 40px rgba(48, 34, 29, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-0.5rem);
+    transition:
+      max-height 0.3s ease,
+      padding 0.3s ease,
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      visibility 0.2s ease;
+  }
+
+  .nav-menu.is-open {
+    max-height: 28rem;
+    padding: 1rem;
+    border-color: rgba(48, 34, 29, 0.12);
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
   .nav-links {
-    display: none;
+    display: grid;
+    gap: 0.15rem;
+  }
+
+  .nav-links a {
+    padding: 0.6rem 0.5rem;
+    border-radius: 0.5rem;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:focus-visible {
+    background: rgba(48, 34, 29, 0.06);
+  }
+
+  .nav-menu .btn {
+    width: 100%;
   }
 
   .section {
@@ -747,7 +877,7 @@ p {
 /* Kartu kontak baru ditumpuk pada layar kecil agar tetap nyaman dibaca. */
 @media (max-width: 700px) {
   .contact-wrap {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -755,6 +885,13 @@ p {
 @media (max-width: 560px) {
   .hero {
     padding-top: 3.5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .nav-toggle span,
+    .nav-menu {
+      transition: none;
+    }
   }
 
   .hero-actions {
