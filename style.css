@@ -137,16 +137,9 @@ p {
 }
 
 .brand-mark {
-  /* Warna logo memakai warna teks dan warna brand pada gradient. */
   width: 2.8rem;
   height: 2.5rem;
-  display: grid;
-  place-items: center;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #e6b1a9, #f5d188);
-  color: #010000;
-  box-shadow: 0 12px 24px rgba(244, 97, 97, 0.3);
-  font-family: "Trirong", serif;
+  object-fit: contain;
 }
 
 .nav-links {
@@ -165,6 +158,8 @@ p {
 .nav-links a:focus-visible {
   color: #30221d;
 }
+
+
 
 /* Tombol bersama beserta variasi warna primer dan sekunder. */
 .btn {
